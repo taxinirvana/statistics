@@ -10,8 +10,7 @@ public class StatsService {
         return sum;
     }
 
-    public int averageSalesAmount(int[] sales) {
-        return totalAmount(sales) / sales.length;
+    public int averageSalesAmount(int[] sales) {return totalAmount(sales) / sales.length;
     }
 
     public int maximumSales(int[] sales) {
@@ -48,15 +47,39 @@ public class StatsService {
     }
 
     public int maxSales(long[] sales) {
-        int minMonth = 0;
+        int maxMonth = 0;
         int month = 0;
         for (long sale : sales) {
 
-            if (sale >= sales[minMonth]) {
-                minMonth = month;
+            if (sale >= sales[maxMonth]) {
+                maxMonth = month;
             }
             month = month + 1;
         }
-        return minMonth + 1;
+        return maxMonth + 1;
+    }
+    public int belowAverage(int[] sales) {
+        int numberMonth = 0;
+
+        for (long sale : sales) {
+
+            if (sale < totalAmount(sales) / sales.length) {
+                numberMonth = numberMonth + 1;
+            }
+
+        }
+        return numberMonth;
+    }
+    public int aboveAverage(int[] sales) {
+        int numberMonth = 0;
+
+        for (long sale : sales) {
+
+            if (sale > totalAmount(sales) / sales.length) {
+                numberMonth = numberMonth + 1;
+            }
+
+        }
+        return numberMonth;
     }
 }
