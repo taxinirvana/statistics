@@ -10,7 +10,8 @@ public class StatsService {
         return sum;
     }
 
-    public int averageSalesAmount(int[] sales) {return totalAmount(sales) / sales.length;
+    public int averageSalesAmount(int[] sales) {
+        return totalAmount(sales) / sales.length;
     }
 
     public int maximumSales(int[] sales) {
@@ -58,6 +59,7 @@ public class StatsService {
         }
         return maxMonth + 1;
     }
+
     public int belowAverage(int[] sales) {
         int numberMonth = 0;
 
@@ -70,6 +72,7 @@ public class StatsService {
         }
         return numberMonth;
     }
+
     public int aboveAverage(int[] sales) {
         int numberMonth = 0;
 

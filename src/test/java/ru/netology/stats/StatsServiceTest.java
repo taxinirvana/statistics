@@ -77,6 +77,7 @@ class StatsServiceTest {
 
 
     }
+
     @Test
     void shouldBelowAverage() {
         StatsService service = new StatsService();
